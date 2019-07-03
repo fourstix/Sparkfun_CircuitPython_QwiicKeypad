@@ -106,7 +106,7 @@ class Sparkfun_QwiicKeypad:
 
     @property
     def time_since_pressed(self):
-        """Return the number of milliseconds since the current button in FIFO was pressed.""" 
+        """Return the number of milliseconds since the current button in FIFO was pressed."""
         msb = self._read_register(_KEYPAD_TIME_MSB)
         lsb = self._read_register(_KEYPAD_TIME_LSB)
         return (msb << 8) | lsb
@@ -175,5 +175,3 @@ class Sparkfun_QwiicKeypad:
         except OSError as err:
             if self._debug:
                 print(err)
-            pass
-

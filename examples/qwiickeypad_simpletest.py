@@ -15,7 +15,6 @@
 
 from time import sleep
 import board
-import digitalio
 import busio
 import sparkfun_qwiickeypad
 
@@ -36,7 +35,7 @@ else:
 
 print('Press any button on the keypad.')
 
-# button value -1 is error, 0 is no key pressed
+# button value -1 is error/busy, 0 is no key pressed
 button = -1
 
 # while no key is pressed
@@ -47,5 +46,5 @@ while button <= 0:
     # Display the button value
     if button > 0:
         print("Button '" + chr(button) + "' was pressed.")
+    # wait a bit before trying again
     sleep(0.100)
-

@@ -22,7 +22,6 @@
  so this example polls the interrupt line instead.
 """
 
-from time import sleep
 import board
 import digitalio
 import busio
