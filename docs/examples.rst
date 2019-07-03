@@ -34,13 +34,13 @@ Examples
     :caption: examples/example4_i2c_scanner.py
     :linenos:
 
-5. Intterupt Read - Show the button pressed when interrupt pin goes low.
+5. Interrupt Read - Show the button pressed when interrupt pin goes low.
 
 .. literalinclude:: ../examples/example5_interrupt_read.py
     :caption: examples/example5_interrupt_read.py
     :linenos:
 
-6. Key Code - Prompt user to input the correct 4 digit keycode.
+6. Key Code - Prompt user to input the correct 4 digit code.
 
 .. literalinclude:: ../examples/example6_key_code.py
     :caption: examples/example6_key_code.py
