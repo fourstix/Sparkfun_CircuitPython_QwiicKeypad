@@ -15,7 +15,9 @@
 
  Example 6 - Key Code:
  This program uses the Qwiic Keypad CircuitPython Library to control the Qwiic
- Keypad over I2C and 
+ Keypad over I2C and waits for the user to input the correct 4 digit keycode.
+ It then responds with a nice message on serial if they get it right.
+
  Qwiic KeyPad records any button presses to a stack. It can remember up to
  15 button presses. The master I2C device (for example, an Uno) can ask for
  the oldest button pressed. If the master continues to read in button presses,

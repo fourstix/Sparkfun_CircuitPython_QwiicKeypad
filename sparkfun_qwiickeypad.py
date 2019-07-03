@@ -44,7 +44,6 @@ Implementation Notes
   https://github.com/adafruit/circuitpython/releases
 
 * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
-# * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
 __version__ = "0.0.0-auto.0"
@@ -101,7 +100,8 @@ class Sparkfun_QwiicKeypad:
 
     @property
     def button(self):
-        """Return the button at the top of the stack (aka the oldest button)."""
+        """Return the button at the top of the stack (aka the oldest button).
+           Return -1 for Error/Busy Try Again or 0 for No Button Pressed. """
         return self._read_register(_KEYPAD_BUTTON)
 
     @property
@@ -147,7 +147,7 @@ class Sparkfun_QwiicKeypad:
 
     def _read_register(self, addr):
         # Read and return a byte from the specified 8-bit register address.
-        # ignore spurious Remote IO error throwns when keypad is busy
+        # ignore spurious Remote IO errors thrown when keypad is busy
         try:
             with self._device as device:
                 device.write(bytes([addr & 0xFF]), stop=False)
@@ -164,7 +164,7 @@ class Sparkfun_QwiicKeypad:
 
     def _write_register(self, addr, value):
         # Write a byte to the specified 8-bit register address
-        # ignore spurious Remote IO error throwns when keypad is busy
+        # ignore spurious Remote IO errors thrown when keypad is busy
         try:
             with self._device as device:
                 # Wait a bit for bus to settle
