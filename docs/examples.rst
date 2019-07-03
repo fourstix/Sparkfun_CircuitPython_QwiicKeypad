@@ -35,7 +35,7 @@ Examples
 
 5. Intterupt Read - Show the button pressed when interrupt pin goes low.
 
-.. literalinclude:: ../examples/example5_intterupt_read.py
+.. literalinclude:: ../examples/example5_interrupt_read.py
     :caption: examples/example5_interrupt_read.py
     :linenos:
 

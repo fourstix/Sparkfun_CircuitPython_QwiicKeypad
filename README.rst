@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/sparkfun-circuitpython-qwiickeypad/badge/?version=latest
-    :target: https://sparkfun-circuitpython-qwiictkeypad.readthedocs.io/en/latest/
+    :target: https://sparkfun-circuitpython-qwiickeypad.readthedocs.io/en/latest/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
