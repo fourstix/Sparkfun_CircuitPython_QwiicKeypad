@@ -38,8 +38,8 @@ This is easily achieved by downloading
 
 Raspberry Pi Setup
 ------------------
-   Adafruit has an excellent tutorial on `Installing CircuitPython Libraries on Raspberry Pi
-   <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
+Adafruit has an excellent tutorial on `Installing CircuitPython Libraries on Raspberry Pi
+<https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
  
 Quick Start Summary:
 
@@ -79,10 +79,10 @@ Quick Start Summary:
 
 Installing from PyPI
 --------------------
-   On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiickeypad/>`_.
+On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
+PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiickeypad/>`_.
 
-   Installing this library will also install the dependency adafruit-circuitpython-busdevice.
+Installing this library will also install the dependency adafruit-circuitpython-busdevice.
 
 Installing from PyPI
 
