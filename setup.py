@@ -17,7 +17,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='adafruit-circuitpython-qwiickeypad',
+    name='sparkfun-circuitpython-qwiickeypad',
 
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
@@ -58,7 +58,5 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
-    #       CHANGE `py_modules=['...']` TO `packages=['...']`
     py_modules=['sparkfun_qwiickeypad'],
 )
