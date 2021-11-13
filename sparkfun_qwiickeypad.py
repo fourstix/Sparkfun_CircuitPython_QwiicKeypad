@@ -61,7 +61,7 @@ from micropython import const
 from adafruit_bus_device.i2c_device import I2CDevice
 
 # public constants
-QWIIC_KEYPAD_ADDR = const(0x4B) # default I2C Address
+QWIIC_KEYPAD_ADDR = const(0x4B)  # default I2C Address
 
 # register constants
 _KEYPAD_ID = const(0x00)
@@ -83,11 +83,11 @@ class Sparkfun_QwiicKeypad:
     def __init__(self, i2c, address=QWIIC_KEYPAD_ADDR, debug=False):
         """Initialize Qwiic Keypad for i2c communication."""
         self._device = I2CDevice(i2c, address)
-        #save handle to i2c bus in case address is changed
+        # save handle to i2c bus in case address is changed
         self._i2c = i2c
         self._debug = debug
 
-# public properites (read-only)
+    # public properites (read-only)
 
     @property
     def connected(self):
@@ -101,12 +101,12 @@ class Sparkfun_QwiicKeypad:
         """Return the version string for the Keypad firmware."""
         major = self._read_register(_KEYPAD_VERSION1)
         minor = self._read_register(_KEYPAD_VERSION2)
-        return 'v' + str(major) + '.' + str(minor)
+        return "v" + str(major) + "." + str(minor)
 
     @property
     def button(self):
         """Return the button at the top of the stack (aka the oldest button).
-           Return -1 for Error/Busy Try Again or 0 for No Button Pressed. """
+        Return -1 for Error/Busy Try Again or 0 for No Button Pressed."""
         return self._read_register(_KEYPAD_BUTTON)
 
     @property
@@ -116,39 +116,39 @@ class Sparkfun_QwiicKeypad:
         lsb = self._read_register(_KEYPAD_TIME_LSB)
         return (msb << 8) | lsb
 
-# public functions
+    # public functions
 
     def set_i2c_address(self, new_address):
         """Change the i2c address of Keypad snd return True if successful."""
         # check range of new address
-        if (new_address < 8 or new_address > 119):
-            print('ERROR: Address outside 8-119 range')
+        if new_address < 8 or new_address > 119:
+            print("ERROR: Address outside 8-119 range")
             return False
 
         # write new address
         self._write_register(_KEYPAD_CHANGE_ADDRESS, new_address)
 
-	# wait a second for joystick to settle after change
+        # wait a second for joystick to settle after change
         sleep(1)
 
         # try to re-create new i2c device at new address
         try:
             self._device = I2CDevice(self._i2c, new_address)
         except ValueError as err:
-            print('Address Change Failure')
+            print("Address Change Failure")
             print(err)
             return False
 
-        #if we made it here, everything went fine
+        # if we made it here, everything went fine
         return True
 
     def update_fifo(self):
         """Commands keypad to plug in the next button into the register map."""
         self._write_register(_KEYPAD_UPDATE_FIFO, _UPDATE_FIFO_COMMAND)
 
-# No i2c begin function is needed since I2Cdevice class takes care of that
+    # No i2c begin function is needed since I2Cdevice class takes care of that
 
-# private methods
+    # private methods
 
     def _read_register(self, addr):
         # Read and return a byte from the specified 8-bit register address.

@@ -39,17 +39,17 @@ i2c = board.I2C()
 # Create relay object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
 
-print('Qwicc Keypad Example 1 Read Button')
+print("Qwicc Keypad Example 1 Read Button")
 
 # Check if connected
 if keypad.connected:
-    print('Keypad connected. Firmware: ', keypad.version)
+    print("Keypad connected. Firmware: ", keypad.version)
 else:
-    print('Keypad does not appear to be connected. Please check wiring.')
+    print("Keypad does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Type Ctrl-C to exit program.')
-print('Press a button. Press * to do a space. Press # to go to next line.')
+print("Type Ctrl-C to exit program.")
+print("Press a button. Press * to do a space. Press # to go to next line.")
 
 try:
     while True:
@@ -58,14 +58,14 @@ try:
         button = keypad.button
 
         if button == -1:
-            print('Keypad error. Try again.')
+            print("Keypad error. Try again.")
             sleep(1)
         elif button != 0:
             c = chr(button)
-            if c == '#':
+            if c == "#":
                 print()
-            elif c == '*':
-                sys.stdout.write(' ')
+            elif c == "*":
+                sys.stdout.write(" ")
                 sys.stdout.flush()
             else:
                 sys.stdout.write(c)

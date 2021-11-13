@@ -35,7 +35,7 @@ import board
 import sparkfun_qwiickeypad
 
 # List with secret keycode (Hey, that's the same code as my luggage!)
-code = ['1', '2', '3', '4']
+code = ["1", "2", "3", "4"]
 
 # List for user input
 guess = []
@@ -50,17 +50,17 @@ i2c = board.I2C()
 # Create relay object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
 
-print('Qwicc Keypad Example 6 Key Code')
+print("Qwicc Keypad Example 6 Key Code")
 
 # Check if connected
 if keypad.connected:
-    print('Keypad connected. Firmware: ', keypad.version)
+    print("Keypad connected. Firmware: ", keypad.version)
 else:
-    print('Keypad does not appear to be connected. Please check wiring.')
+    print("Keypad does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Type the correct Keycode or Ctrl-C to exit program.')
-print('Please type in the correct 4 digit Keycode.')
+print("Type the correct Keycode or Ctrl-C to exit program.")
+print("Please type in the correct 4 digit Keycode.")
 
 
 try:
@@ -75,14 +75,14 @@ try:
         if len(guess) == 4:
             count += 1
             if guess == code:
-                print('Keycode correct. Wahooooooooooo!')
+                print("Keycode correct. Wahooooooooooo!")
                 break
             else:
-                print('Sorry, please try again.')
+                print("Sorry, please try again.")
                 guess.clear()
-                print('Please type in the correct 4 digit Keycode.')
+                print("Please type in the correct 4 digit Keycode.")
                 if count > 2:
-                    print('Hint: try', code)
+                    print("Hint: try", code)
 
         sleep(0.250)
 
