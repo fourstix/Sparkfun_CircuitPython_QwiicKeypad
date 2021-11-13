@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 #  This is example is for the SparkFun Qwiic Keypad.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -12,14 +16,13 @@
  This program uses the Qwiic Keypad CircuitPython Library to
  control the Qwiic Keypad over I2C to read the button.
 """
-
+import sys
 from time import sleep
 import board
-import busio
 import sparkfun_qwiickeypad
 
 # Create bus object using our board's I2C port
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 
 # Create keypad object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
@@ -31,7 +34,7 @@ if keypad.connected:
     print('Keypad connected. Firmware: ', keypad.version)
 else:
     print('Keypad does not appear to be connected. Please check wiring.')
-    exit()
+    sys.exit()
 
 print('Press any button on the keypad.')
 

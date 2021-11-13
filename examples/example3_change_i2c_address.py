@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 #  This is example is for the SparkFun Qwiic Keypad.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -25,7 +29,6 @@
 
 import sys
 import board
-import busio
 import sparkfun_qwiickeypad
 
 # The default QwiicKeypad i2c address is 0x4B (75)
@@ -50,7 +53,7 @@ print('Current i2c address = ' + str(i2c_address)
       + ' [' + hex(i2c_address) + ']')
 
 # Create library object using our Bus I2C port
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c, i2c_address)
 
 if keypad.connected:
@@ -58,7 +61,7 @@ if keypad.connected:
 else:
     # if we can't connecct, something is wrong so just quit
     print('Keypad does not appear to be connected. Please check wiring.')
-    exit()
+    sys.exit()
 
 print('Address: ' + str(i2c_address) + ' [' + hex(i2c_address) + ']')
 

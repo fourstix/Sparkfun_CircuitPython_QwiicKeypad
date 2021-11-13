@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 #  This is example is for the SparkFun Qwiic Keypad.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -15,13 +19,10 @@
 
   The factory default address is 0x4B.
 """
-
 import time
-
 import board
-import busio
 
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 
 while not i2c.try_lock():
     pass
