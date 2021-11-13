@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 #  This is example is for the SparkFun Qwiic Keypad.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -23,14 +27,13 @@
  you need to go and do something else with your code, you can then come back
  to the keypad and pull in the last 15 button presses.
 """
-
+import sys
 from time import sleep
 import board
-import busio
 import sparkfun_qwiickeypad
 
 # Create bus object using our board's I2C port
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 
 # Create relay object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
@@ -42,7 +45,7 @@ if keypad.connected:
     print('Keypad connected. Firmware: ', keypad.version)
 else:
     print('Keypad does not appear to be connected. Please check wiring.')
-    exit()
+    sys.exit()
 
 print('Type Ctrl-C to exit program.')
 print('Press a button.')

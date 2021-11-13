@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2019 Gaston Williams
@@ -23,7 +27,7 @@
 `sparkfun_qwiickeypad`
 ================================================================================
 
-CircuitPython helper library for the Sparkfun Qwiic Keypad
+CircuitPython library for the Sparkfun Qwiic Keypad
 
 
 * Author(s): Gaston Williams
@@ -46,6 +50,7 @@ Implementation Notes
 * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
 """
 
+# imports__version__ = "0.0.0-auto.0"
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/fourstix/Sparkfun_CircuitPython_QwiicKeypad.git"
 
@@ -150,9 +155,8 @@ class Sparkfun_QwiicKeypad:
         # ignore spurious Remote IO errors thrown when keypad is busy
         try:
             with self._device as device:
-                device.write(bytes([addr & 0xFF]), stop=False)
                 result = bytearray(1)
-                device.readinto(result)
+                device.write_then_readinto(bytes([addr & 0xFF]), result)
                 if self._debug:
                     print("$%02X => %s" % (addr, [hex(i) for i in result]))
                 return result[0]
