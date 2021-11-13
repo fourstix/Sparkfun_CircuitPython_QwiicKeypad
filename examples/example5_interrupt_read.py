@@ -41,17 +41,17 @@ keypad_interrupt_pin.pull = digitalio.Pull.UP
 # Create keypad object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
 
-print('Qwicc Keypad Example 5 Interrupt Read')
+print("Qwicc Keypad Example 5 Interrupt Read")
 
 # Check if connected
 if keypad.connected:
-    print('Keypad connected. Firmware: ', keypad.version)
+    print("Keypad connected. Firmware: ", keypad.version)
 else:
-    print('Keypad does not appear to be connected. Please check wiring.')
+    print("Keypad does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Press a button on the keypad and it will print here.')
-print('Type Ctrl-C to exit program.')
+print("Press a button on the keypad and it will print here.")
+print("Type Ctrl-C to exit program.")
 
 try:
     while True:

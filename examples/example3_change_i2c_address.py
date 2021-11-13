@@ -41,54 +41,53 @@ i2c_address = 0x4B
 if len(sys.argv) > 1:
     try:
         # check to see if hex or decimal arguement
-        if '0x' in sys.argv[1]:
+        if "0x" in sys.argv[1]:
             i2c_address = int(sys.argv[1], 16)
         else:
             i2c_address = int(sys.argv[1])
     except ValueError:
-        print('Ignoring invalid arguement: ' + str(sys.argv[1]))
+        print("Ignoring invalid arguement: " + str(sys.argv[1]))
 
 # Show the initial address
-print('Current i2c address = ' + str(i2c_address)
-      + ' [' + hex(i2c_address) + ']')
+print("Current i2c address = " + str(i2c_address) + " [" + hex(i2c_address) + "]")
 
 # Create library object using our Bus I2C port
 i2c = board.I2C()
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c, i2c_address)
 
 if keypad.connected:
-    print('Qwiic Keypad Example.')
+    print("Qwiic Keypad Example.")
 else:
     # if we can't connecct, something is wrong so just quit
-    print('Keypad does not appear to be connected. Please check wiring.')
+    print("Keypad does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Address: ' + str(i2c_address) + ' [' + hex(i2c_address) + ']')
+print("Address: " + str(i2c_address) + " [" + hex(i2c_address) + "]")
 
-text = input('Enter a new I2C address (as a decimal from 8 to 119 or hex 0x08 to 0x77):')
+text = input(
+    "Enter a new I2C address (as a decimal from 8 to 119 or hex 0x08 to 0x77):"
+)
 
 # check to see if hex or decimal value
-if '0x' in text:
+if "0x" in text:
     new_address = int(text, 16)
 else:
     new_address = int(text)
 
-print('Changing address to ' + str(new_address)
-      + ' [' + hex(new_address) + ']')
+print("Changing address to " + str(new_address) + " [" + hex(new_address) + "]")
 
 result = keypad.set_i2c_address(new_address)
 
 if result:
-    print('Address changed to ' + str(new_address)
-          + ' [' + hex(new_address) + ']')
+    print("Address changed to " + str(new_address) + " [" + hex(new_address) + "]")
     # After the change check the new connection and show firmware version
     if keypad.connected:
-        print('Connected to Keypad after address change.')
+        print("Connected to Keypad after address change.")
     else:
-        print('Error after address change. Cannot connect to Keypad.')
+        print("Error after address change. Cannot connect to Keypad.")
 
 else:
-    print('Address change failed.')
+    print("Address change failed.")
 
 # good advice whether the address changed worked or not
-print('Run example4_i2c_scanner.py to verify the Qwiic Keypad address.')
+print("Run example4_i2c_scanner.py to verify the Qwiic Keypad address.")

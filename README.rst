@@ -29,7 +29,7 @@ CircuitPython library for Sparkfun Qwiic 12 Button Keypad.  This library is port
     :alt: SparkFun Qwiic Keypad - 12 Button (COM-15290)
 
 `SparkFun Qwiic Keypad - 12 Button (COM-15290) <https://www.sparkfun.com/products/15290>`_
-  
+
 
 
 Dependencies
@@ -50,7 +50,7 @@ Raspberry Pi Setup
 ------------------
 Adafruit has an excellent tutorial on `Installing CircuitPython Libraries on Raspberry Pi
 <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
- 
+
 Quick Start Summary:
 --------------------
 * Start with the latest version of Raspbian with Wifi configured.
@@ -205,11 +205,11 @@ Then run the build:
 
 License Information
 -----------------------
-This product is **open source**! 
+This product is **open source**!
 
-Please review the LICENSE.md file for license information. 
+Please review the LICENSE.md file for license information.
 
-Please use, reuse, and modify these files as you see fit. 
+Please use, reuse, and modify these files as you see fit.
 
 Please maintain the attributions to SparkFun Electronics and Adafruit and release any derivative under the same license.
 

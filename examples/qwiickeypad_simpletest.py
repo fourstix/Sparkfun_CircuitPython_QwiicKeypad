@@ -27,16 +27,16 @@ i2c = board.I2C()
 # Create keypad object
 keypad = sparkfun_qwiickeypad.Sparkfun_QwiicKeypad(i2c)
 
-print('Qwicc Keypad Simple Test')
+print("Qwicc Keypad Simple Test")
 
 # Check if connected
 if keypad.connected:
-    print('Keypad connected. Firmware: ', keypad.version)
+    print("Keypad connected. Firmware: ", keypad.version)
 else:
-    print('Keypad does not appear to be connected. Please check wiring.')
+    print("Keypad does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Press any button on the keypad.')
+print("Press any button on the keypad.")
 
 # button value -1 is error/busy, 0 is no key pressed
 button = -1

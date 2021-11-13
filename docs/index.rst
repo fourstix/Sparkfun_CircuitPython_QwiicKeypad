@@ -23,7 +23,7 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
-    Sparkfun Qwiic Keypad Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-keypad-hookup-guide> 
+    Sparkfun Qwiic Keypad Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-keypad-hookup-guide>
 
 .. toctree::
     :caption: Related Products

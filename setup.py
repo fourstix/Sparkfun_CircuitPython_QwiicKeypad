@@ -58,7 +58,6 @@ setup(
     ],
     # What does your project relate to?
     keywords="adafruit blinka circuitpython micropython qwiickeypad sparkfun qwiic keypad",
-
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # IF LIBRARY FILES ARE A PACKAGE FOLDER,
