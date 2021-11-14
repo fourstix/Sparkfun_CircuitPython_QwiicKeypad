@@ -96,13 +96,13 @@ To install for current user:
 
 .. code-block:: shell
 
-    pip3 install Sparkfun-circuitpython-qwiickeypad
+    pip3 install sparkfun-circuitpython-qwiickeypad
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install Sparkfun-circuitpython-qwiickeypad
+    sudo pip3 install sparkfun-circuitpython-qwiickeypad
 
 To install in a virtual environment in your current project:
 
@@ -111,7 +111,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install Sparkfun-circuitpython-qwiickeypad
+    pip3 install sparkfun-circuitpython-qwiickeypad
 
 
 
@@ -144,20 +144,19 @@ Usage Example
 * `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
 * Code Example:
 
- .. code-block:: shell
+.. code-block:: shell
 
-     # import the CircuitPython board and busio libraries
-     import board
-     import busio
-     import sparkfun_qwiickeypad
+    # import the CircuitPython board and busio libraries
+    import board
+    import sparkfun_qwiickeypad
 
-     # Create bus object using the board's I2C port
-     i2c = busio.I2C(board.SCL, board.SDA)
+    # Create bus object using the board's I2C port
+    i2c = board.I2C()
 
-     keypad = QwiicKeypad(i2c)  # default address is 0x4B
+    keypad = QwiicKeypad(i2c)  # default address is 0x4B
 
-     # For a different address use QwiicKeypad(i2c, address)
-     # keypad = QwiicKeypad(i2c, 0x4A)
+    # For a different address use QwiicKeypad(i2c, address)
+    # keypad = QwiicKeypad(i2c, 0x4A)
 
 Contributing
 ============
